@@ -23,13 +23,15 @@ namedPersonTuple.age
  - Experiment:
  Try creating your own tuple. Mix in different variable types and try mixing some parameters with names and some without. Does it still work?
  */
-
+var mulTuple = (worstName: "Steve", pastName: "Dave", equipment: 34)
 
 /*:
  - Experiment:
  Try nesting tuples within one another. Create a tuple and add a tuple as one of its items.
  */
-
+var multiTuple = ((server: 43, name:"seven"), doesThisWork: "No")
+print (multiTuple.0)
+print (multiTuple.1)
 
 /*:
  - Experiment:
@@ -41,7 +43,7 @@ let interestingNumbers = [
     "Fibonacci": [1, 1, 2, 3, 5, 8],
     "Square": [1, 4, 9, 16, 25],
 ]
-for (kind, numbers) in interestingNumbers {
+for (_, numbers) in interestingNumbers {
     
 }
 
@@ -63,31 +65,44 @@ To test: call your new function with eligable true and false, and print the two 
  */
 
 enum Months: Int{
-    case January = 1
-    case Feburary
-    case March
-    case April
-    case May, June, July, August
-    //...
+    case January = 1, February, March, April, May, June, July, August, September, October, November, December
+    
     
     func abbreviatedStringForm() -> String {
-        switch self {
+        switch self
+        {
+        case .January:
+            return "Jan"
+        case .February:
+            return "feb"
+        case .March:
+            return "mar"
+        case .April:
+            return "Apr"
+            
             default:
                 return ""
         }
     }
+    func howManyMonths(monthOne: Months, monthTwo: Months ) -> Int {
+        return monthOne.rawValue - monthTwo.rawValue
+    }
 }
 
+var myStr = " hi"
+
+switch myStr
+{
+case "bye":
+    break
+default:
+    <#code#>
+}
 //: Now we can represents the months in our program with easy readiablity and minimal mistakes.
-let januaryMonth = Months.January
+let januaryMonth = Months.January.rawValue
+print (januaryMonth)
 let marchMonth = Months.March
 
-/*:
- - Experiment:
- Try adding '.rawValue' to the end of `Months.Januray` and `Months.March` above. What value did you get? How are these values assigned to the months?
- \
-Try removing the '= 1' from the Months enum. Now what is different?
- */
 
 
 /*:

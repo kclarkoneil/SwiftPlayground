@@ -25,13 +25,18 @@ print("Your name is \(name)")
  - Example:
  "Your name is Joe Smith, your age is 35, and your height is 175cm."
  */
-
+name = "steve"
+var age = 35
+var height = 4
+print ("Your name is \(name) your age is \(age) and your height is \(height)")
 
 /*:
  - Experiment:
  Math calculations can be included within the "`\()`" such as adding two variables together. Try printing out a sentence using string interpolation and include a calculation.
  */
-
+let k = 6
+var a = 4
+print ("\(a) + \(k) = \(k + a)")
 /*:
  ## Control Flow
 
@@ -51,7 +56,16 @@ if myConditional {
  - Experiment:
   Try creating your own 'if' statement that determines whether a given number is even, odd or zero.
  */
+var myBetterConditional = 2
 
+if myBetterConditional == 0{
+    print ("nice")
+} else if myBetterConditional == 1{
+    print ("niice")
+}
+else if myBetterConditional == 2 {
+    print("niiice")
+}
 
 /*:
  - Experiment:
@@ -59,7 +73,7 @@ if myConditional {
  Try changing the 'vegetable' variable to test the conditions and figure out how they work.
  */
 
-let vegetable = "red pepper"
+let vegetable = "ostrich"
 var vegetableComment = ""
 switch vegetable {
 case "celery":
@@ -78,12 +92,29 @@ default:
  Create an if/else statement to print out the grammatically correct description of the number of bicycles there are. Declare a 'bicycleCount' variable with any number you wish then cover the conditions for zero bicycles, 1 bicycle, and more than 1 bicycle. ie: 'There are zero bicycles', 'There is 1 bicycle', 'There are 20 bicycles'
  */
 
-
+var bicycleCount: Int
+bicycleCount = 15
+if (bicycleCount == 0) {
+print("There are zero bicycles")
+}
+else if (bicycleCount == 1) {
+    print ("There is 1 bicycle")
+}
+else {
+    print ("There are \(bicycleCount) bicycles")
+}
 /*:
  - Callout(Challenge):
  Rewrite the above Challenge as a switch statement
  */
-
+switch bicycleCount {
+case 0:
+    print("There are zero bicycles")
+case 1:
+    print ("There is 1 bicycle")
+default:
+    print ("There are \(bicycleCount)")
+}
 
 /*:
  - Callout(Challenge):
@@ -93,5 +124,22 @@ default:
  - If the year can be evenly divided by 100 = Is NOT a Leap Year, unless;
  - The year is also evenly divisible by 400 = Is Leap Year
  */
+var isLeapYear: Bool
+let leapYear = 400
+if (leapYear % 4 == 0 ) {
+     if (leapYear % 400 == 0) {
+        isLeapYear = true
+    }
+    else if (leapYear % 100 == 0) {
+        isLeapYear = false
+    }
+    
+    else {
+        isLeapYear = true
+    }
+}
+else {
+    isLeapYear = false
+}
 
 //: [Next](@next)

@@ -10,12 +10,12 @@
 /*:
  Here we declare a class by using the `'class'` keyword and then the name of the class. Within the braces we are free to add properties and new methods for class.
  */
-class ShapeClass {
-    var numberOfSides = 0
-    func description() -> String {
-        return "A shape with \(numberOfSides) sides."
-    }
-}
+//class ShapeClass {
+//    var numberOfSides = 0
+//    func description() -> String {
+//        return "A shape with \(numberOfSides) sides."
+//    }
+//}
 /*:
  The struct version looks the same except we use the keyword `'struct'`.
  */
@@ -30,35 +30,57 @@ struct ShapeStruct {
  - Experiment:
  Update the ShapeClass and add a new property 'name'. Also, update the description method to include the name when it prints.
  */
-
+class ShapeClass {
+    var numberOfSides = 0
+    var name = "Giuseppe"
+    func description() -> String {
+        return "A shape with \(numberOfSides) and \(name)sides."
+    }
+}
 
 /*:
  - Experiment:
  Try creating an instance of the ShapeClass. We can do this by writing the class name then putting parentheses '()' after the class name. Assign it to a declared variable and try setting the variables 'numberofSides' and 'name' and calling the 'description' method.
  */
-
+var shapeInstance = ShapeClass()
+shapeInstance.numberOfSides = 3
+shapeInstance.name = "steve"
+shapeInstance.description()
 
 /*:
  Our ShapeClass is looking good but it is missing something important. We need an initializer to set up the class when an instance is created. We are going to create another class very similar to ShapeClass but this time, we will add the initializer.
  */
 
+//class NamedShapeClass {
+//    var numberOfSides: Int = 0
+//    var name: String
+//
+//    init(name: String) {
+//        self.name = name
+//    }
+//
+//    func description() -> String {
+//        return "A shape with \(numberOfSides) sides."
+//    }
+//}
+
+/*:
+ - Experiment:
+ Add another initializer to our 'NamedShapeClass'. Have this initializer take in 'name' and 'numberOfSides' as its parameters. Then test it out by creating an instance of 'NamedShapeClass'.
+ */
 class NamedShapeClass {
     var numberOfSides: Int = 0
     var name: String
     
-    init(name: String) {
+    init(name: String, numberOfSides: Int) {
         self.name = name
+        self.numberOfSides = numberOfSides
     }
     
     func description() -> String {
         return "A shape with \(numberOfSides) sides."
     }
 }
-
-/*:
- - Experiment:
- Add another initializer to our 'NamedShapeClass'. Have this initializer take in 'name' and 'numberOfSides' as its parameters. Then test it out by creating an instance of 'NamedShapeClass'.
- */
 
 
 /*:

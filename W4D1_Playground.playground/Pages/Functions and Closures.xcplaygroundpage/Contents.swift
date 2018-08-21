@@ -42,12 +42,11 @@ func sayHello(toPerson: String) -> String{
  - Experiment:
  Try calling all of the functions above. They all have the same function name, but the compiler doesn't complain. Can you think of why this might be?
  */
-
-/*:
- - Experiment:
- Try creating your own function that accepts two parameters of any type you choose. Have the function print out the two parameters and test your function.
- */
-
+func addNumbers(numberOne: Double, numberTwo:Double) -> Double{
+    return numberOne + numberTwo
+}
+var myResult = addNumbers(numberOne: 5, numberTwo: 6)
+print (myResult)
 /*:
  - Callout(Challenge):
  Create four separate functions to add, subtract, multiple, and divide with two parameters given to it and returns a number result. Try testing each one afterwards.
@@ -58,6 +57,16 @@ func sayHello(toPerson: String) -> String{
  - Callout(Challenge):
  Create your own 'reverse' function that takes in an array of Int, reverses the order of the array, and returns the newly reversed array of Int. The array class has its own 'reverse' method, but do not use it for this challenge.
  */
+func reverseMyArray( myoldArray: Array<Int>) -> Array<Int>{
+    var myNewArray = [Int]()
+    for i in 0...(myoldArray.count-1){
+        var newInt = myoldArray[myoldArray.count - i]
+        myNewArray.append(newInt)
+    }
+   return myNewArray
+}
+var myTestArray = [1,2,3,4,5]
+var myResultArray = reverseMyArray(myoldArray: myTestArray)
 
 /*:
  ## Closures
@@ -122,7 +131,9 @@ var sayHelloClosureWithReturn = { (name: String) -> String in
  - Experiment:
  Try creating your own closure that accepts two parameters of any type you choose. Have the closure print out the two parameters and test your closure.
  */
-
+var thisIsPrettyDumb = { (tname: String, newName: String) in
+    print(tname, newName)
+}
 /*:
  - Experiment:
  Declare a variable with an explicit closure type: `(String) -> (String)`. This closure type says it takes one parameter of type String and returns a variable of type String.

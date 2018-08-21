@@ -8,7 +8,10 @@
  */
 protocol ShapeProtocol {
     var numberOfSides: Int { get set }
+    var colour: String { get set }
     func shapeDescription()
+    func areYouASquare()
+    func howBigIsTheArea(height:Int, width:Int, isASquare:Bool) ->Int?
 }
 
 /*:
@@ -16,14 +19,30 @@ protocol ShapeProtocol {
  */
 class Square: ShapeProtocol {
     var numberOfSides: Int
+    var colour: String
     
-    init(){
+    init(colour:String) {
+        
         self.numberOfSides = 4
+        self.colour = colour
     }
     
     func shapeDescription() {
         
         print("This is a square")
+    }
+    func areYouASquare() {
+        
+        print("Yes")
+    }
+    func howBigIsTheArea(height:Int, width:Int, isASquare:Bool) ->Int? {
+        
+        if isASquare == true {
+            return height * width
+        }
+        else {
+            print("Dunno")
+            return nil
     }
 }
 
@@ -74,7 +93,12 @@ var mySquaredDoubleValue = myDoubleValue.square()
  - Experiment:
  Try adding the 'square' function to the `Float` type
  */
-
+    extension Float {
+    
+        func square () -> Float {
+            return self * self
+        }
+}
 /*:
  We are going to add a few extensions to several classes that you could potentially use for your future projects to make things more convenient.
  */

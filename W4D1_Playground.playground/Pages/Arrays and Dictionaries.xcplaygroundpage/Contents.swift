@@ -19,18 +19,21 @@ myDictionary["Principal"] = 1
  - Experiment:
  Try creating an array and dictionary using `'let'` vs `'var'` then try adding something to them. What do you notice? For the array, you can use a method called 'append' to add something to it.
  */
-
+var myArray = [2,34,5757575757]
+myArray.append(3)
 
 /*:
  - Experiment:
  Try creating an empty array with an explicit type `[type]`. What happens when you add a value that isn't the same type?
  */
-
+var myNewArray = [Int]()
+myNewArray.append(7)
 
 /*:
  - Experiment:
  Try creating an empty dictionary with an explicit type. `[keyType: valueType]`
  */
+var myTierOneDictionary = [Int: String]()
 
 
 /*:
@@ -43,7 +46,10 @@ myDictionary["Principal"] = 1
  - reverse
  - count
  */
-
+myNewArray.append(74)
+myNewArray.append(43)
+myNewArray.remove(at: 1)
+print("\(myNewArray.count)")
 
 /*:
  - Experiment:
@@ -52,7 +58,13 @@ myDictionary["Principal"] = 1
  - isEmpty
  - count
  */
-
+myTierOneDictionary[4] = "steve"
+myTierOneDictionary[3] = "bill"
+myTierOneDictionary.removeValue(forKey: 4)
+myTierOneDictionary.removeValue(forKey: 3)
+var empty: Bool
+empty = myTierOneDictionary.isEmpty
+print("\(empty)")
 
 /*:
  - Callout(Challenge):

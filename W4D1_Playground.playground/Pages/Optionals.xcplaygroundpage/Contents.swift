@@ -19,13 +19,15 @@ var doubleNumberValue: Double? = nil
  - Experiment:
  Declare a non-optional variable of a `String` and set it to `nil`. What happens?
  */
-
+var testString: String?
+testString = nil
 
 /*:
  - Experiment:
  Declare an optional variable of a type `String` and set an initial `String` value to it. Then set it to `nil` on the next line. Does this work? Why or why not?
  */
-
+var testNewString: String? = "cheers"
+testNewString = nil
 
 /*:
  Let's consider multiplying two numbers together that are of different types. Since we have a `Double` and an `Int`, we need to convert the two numbers to the same type. For example, creating a new `Double` using an `Int`.
@@ -42,18 +44,22 @@ ratio * convertIntegerValue // now this works!
 /*:
  Now let's say I have a `String` that contains digits and I want to use the numbered value of the `String` to multiply with another `Double`.
  */
-
+var numberString = "7"
+let number:Double = 7
+var intValue = Double(numberString)
+var result = intValue! * number
 /*:
  - Experiment:
  Declare a `String` containing digits and try converting it to a `Double` the same way shown in the above example. What do you notice about the variable type? Hint: Use 'Option' + Mouse Click on the variable to see the type
  */
-
+var stupidnumberString = "yes"
+var crashMe = Double(stupidnumberString)
 
 /*:
  - Experiment:
  With your newly converted `Double` from a `String`, try multiplying it with the 'ratio' variable. What happens?
  */
-
+var anotherResult = ratio * intValue!
 
 /*:
  Your newly converted `Double` value is a `Double?` which indicates we might have a double or we might have nothing.  Converting a `String` to a `Double` might fail because the `String` does not guarantee there will only be digits within it.
@@ -77,7 +83,7 @@ print("\(myOptionalDouble!)")
   - Experiment:
  Now you try! Try printing out your converted `Double?` with a force unwrap
 */
-
+print("\(intValue!)")
 
 
 /*:
@@ -85,19 +91,16 @@ print("\(myOptionalDouble!)")
  Go back and change your `String` to something that has no digits. What happens and why?
  */
 
+//print ("\(crashMe!)")
 
-
-/*:
- - Experiment:
- Declare an optional variable of a type `String` and set an initial `String` value to it. Try printing it.
- Now print it again, but this time unwrap the optional variable using the `'!'`. What's different about the two lines you printed?
- */
 
 
 /*:
  - Experiment:
  Try setting an optional `String` variable to a non-optional `String` variable. What happens? What can you do to prevent the compiler from throwing an error?
  */
+var optionalString: String?
+var stringTest: String
 
 
 /*:
@@ -121,12 +124,20 @@ if let unwrapped = gravityConstant {
  - Experiment:
  Try changing `gravityConstant` to nil. What happens?
  */
-
+//Cannot change the constant
 
 /*:
  - Experiment:
  Create an array with containing elements of any type of your choice. Try experimenting with the array methods `'first'` and `'last'` to find out what they do. You'll see that both return optional values. Print out the values of first and last by using conditional unwrapping.
  */
+var anotherArray = [7,8,9,99,40,33,34]
+let newInt: Int? = anotherArray.first
+if let newvar = newInt {
+    print("\(newvar)")
+}
+else {
+    print("not an int")
+}
 
 
 /*:
@@ -134,7 +145,13 @@ if let unwrapped = gravityConstant {
  Using the same array, experiment with the array method `'indexOf'` and find out what it does. Print out the value using conditional unwrapping.
  */
 
-
+var indexOf9: Int? = anotherArray.index(of: 9)
+if let existence = indexOf9 {
+    print ("\(existence)")
+}
+else {
+    print ("9 is not an element")
+}
 /*:
  - Callout(Challenge):
  

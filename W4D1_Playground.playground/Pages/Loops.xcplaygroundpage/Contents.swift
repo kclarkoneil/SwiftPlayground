@@ -29,19 +29,27 @@ for i in 2...5 {
  - Experiment:
  What's the difference between `2...5` vs `2..<5`?
  */
-
+//2,3,4,5 2,3,4
 
 /*:
  - Experiment:
   Use a ranged for loop to search through the 'pets' array above for the word 'pig' and print out its index.
  */
-
+for i in 0..<4 {
+    if pets[i] == "pig" {
+    print("\(pets[i])")
+    }
+}
 
 /*:
  - Experiment:
  Create an array of random numbers of your choosing then make a for loop that adds 1 to each number.
  */
-
+var randomNumbersArray = [34,45,95,43,25,36,27]
+for myUgh in randomNumbersArray {
+    myUgh + 1
+    print ("\(myUgh)")
+}
 
 /*:
  - Experiment:
@@ -58,14 +66,20 @@ let interestingNumbers = [
     "Square": [1, 4, 9, 16, 25],
 ]
 var largest = 0
-for (_, numbers) in interestingNumbers {
+
+var category:String = "Prime"
+
+for (key, numbers) in interestingNumbers {
+    
     for number in numbers {
         if number > largest {
             largest = number
+            category = key
+           
         }
     }
 }
-print(largest)
+print("The largest number:\(largest) is from \(category)")
 
 
 /*:

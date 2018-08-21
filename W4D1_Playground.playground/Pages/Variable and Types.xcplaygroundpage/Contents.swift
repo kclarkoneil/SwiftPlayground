@@ -1,10 +1,3 @@
-/*:
- Swift playgrounds allow you to run Swift code directly without having to code an entire app.
- 
- - Experiment: Let's try this out now, write the following line of code directly below this comment
- 
-    `print("Hello, world!")`
- */
 
 /*:
  ## Variables
@@ -21,6 +14,8 @@ students = 7
  Try creating a variable and/or constant for your name, and age.
  What happens if you try to change the value of a constant?
  */
+let age = 24
+var myAge:Int
 
 
 //: ---
@@ -43,7 +38,8 @@ students = 7
  */
 
 var weeksCompleted = 4
-
+weeksCompleted = 5
+weeksCompleted = 4
 /*:
  As you can see, you don't have to write the type explicitly. Providing a value when you create a constant or variable lets the compiler _infer_ its type. In the example above, the compiler infers that `students` is an integer because its initial value is an integer.
  
@@ -114,6 +110,9 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: Make sure your radius is of type `Double`
  */
+import Foundation
+let pi = 3.14
+var myCircleArea = pi * pow(10, 2)
 
 /*:
  - Callout(Problem 2):
@@ -122,14 +121,11 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: Radius is half the length of the diameter
  */
-
+var myCircumfereceOfCircle = pi * 2 * 12
 /*:
  - Callout(Problem 3):
  Find the volume of a cylinder with a radius of 5 metres and a height of 7 metres
  */
-/*:
- Hint: You can double-check your answers yourself or on Google... Google has a really easy input mechanism for all three of these formulas if you just search them up.
- */
-
+var myVolumOfCylinder = pi * pow(5,2) * 7
 
 //: [Next](@next)
